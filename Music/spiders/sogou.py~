@@ -1,0 +1,60 @@
+#coding=utf-8
+
+from scrapy.selector import HtmlXPathSelector as pageParser
+from scrapy.spider import BaseSpider
+from scrapy.http import Request
+from Music.items import SogouItem
+import urllib
+
+class SogouSpider(BaseSpider):
+    name = 'sogou'
+    allowed_domains = ['sogou.com']
+    start_urls = ['http://music.sogou.com/song/newtop_1.html',
+                  'http://music.sogou.com/song/topsong_1.html',
+                  'http://music.sogou.com/song/enpop_1.html',
+                  'http://music.sogou.com/song/jkpop_1.html',
+                  'http://music.sogou.com/song/webbillboardp_1.html',
+                  'http://music.sogou.com/song/ukp_1.html',
+                  ]
+    
+    def __init__(self):
+        pass
+        
+    def parse(self, response):
+        hxs = pageParser(response)
+        
+        titles = hxs.select('//td[@class="title"]/a/text()').extract()
+        artists = hxs.select('//a[@uigs="consume=singer_new"]/text()').extract()
+        download_pages = hxs.select('//span[@class="cd3"]/a/@onclick').extract()
+        #dates = hxs.select('//div[@class="item-date"]/text()').extract()
+        for i in range(0, len(titles)):  
+            title = titles[i].replace('\t', '').replace('\n', '').replace('\r', '') #+ ' ' + artists[i]
+            artist = artists[i].replace('\t', '').replace('\n', '').replace('\r', '')
+            download_page = download_pages[i].split("'")[1]
+            yield Request(download_page, headers = {'Host':'mp3.sogou.com', 'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:14.0) Gecko/20100101 Firefox/14.0.1'}, callback = self.parse_download, meta = {'title': title, 'artist': artist})
+            
+    
+    def parse_download(self, response):
+        hxs = pageParser(response)
+        title = response.meta['title']
+        artist = response.meta['artist']
+        
+        download_link = ''
+        links = hxs.select('//a/@href').extract()
+        for link in links:
+            if '.mp3' in link:
+                download_link = link
+                break
+        
+        if download_link != '':
+            item = SogouItem()
+            item['title'] = title
+            item['download_link'] = download_link
+            item['artist'] = artist
+
+            yield item
+        
+        
+        
+        
+        

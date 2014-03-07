@@ -1,0 +1,86 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BOT_NAME	Music/settings.py	/^BOT_NAME = 'Music'$/;"	v
+BOT_VERSION	Music/settings.py	/^BOT_VERSION = '1.0'$/;"	v
+BillBoardSpider	Music/spiders/billboard.py	/^class BillBoardSpider(BaseSpider):$/;"	c
+BillboardItem	Music/items.py	/^class BillboardItem(Item):$/;"	c
+Downloaders	Music/downloader.py	/^class Downloaders(threading.Thread):$/;"	c
+EXTENSIONS	Music/settings.py	/^EXTENSIONS = {'Music.extensions.StopDownloaders': 500,}$/;"	v
+ITEM_PIPELINES	Music/settings.py	/^ITEM_PIPELINES = ['Music.pipelines.MusicPipeline']$/;"	v
+LOG_ENABLED	Music/settings.py	/^LOG_ENABLED = False$/;"	v
+MusicMain	Music/music.py	/^class MusicMain():$/;"	c
+MusicPipeline	Music/pipelines.py	/^class MusicPipeline(object):$/;"	c
+NEWSPIDER_MODULE	Music/settings.py	/^NEWSPIDER_MODULE = 'Music.spiders'$/;"	v
+NUM_DOWNLOADERS	Music/music.py	/^    NUM_DOWNLOADERS = 10$/;"	v
+SPIDER_MODULES	Music/settings.py	/^SPIDER_MODULES = ['Music.spiders']$/;"	v
+Sock	Music/sock.py	/^class Sock():$/;"	c
+SogouItem	Music/items.py	/^class SogouItem(Item):$/;"	c
+SogouSpider	Music/spiders/sogou.py	/^class SogouSpider(BaseSpider):$/;"	c
+StopDownloaders	Music/extensions.py	/^class StopDownloaders(object):$/;"	c
+USER_AGENT	Music/settings.py	/^USER_AGENT = '%s\/%s' % (BOT_NAME, BOT_VERSION)$/;"	v
+XiamiSpider	Music/spiders/xiami.py	/^class XiamiSpider(BaseSpider):$/;"	c
+__init__	Music/downloader.py	/^    def __init__(self, name, queue):$/;"	m	class:Downloaders
+__init__	Music/extensions.py	/^    def __init__(self):$/;"	m	class:StopDownloaders
+__init__	Music/music.py	/^    def __init__(self, num_downloaders):$/;"	m	class:MusicMain
+__init__	Music/pipelines.py	/^    def __init__(self):$/;"	m	class:MusicPipeline
+__init__	Music/sock.py	/^    def __init__(self, queue=''):$/;"	m	class:Sock
+__init__	Music/spiders/billboard.py	/^    def __init__(self):$/;"	m	class:BillBoardSpider
+__init__	Music/spiders/sogou.py	/^    def __init__(self):$/;"	m	class:SogouSpider
+__init__	Music/spiders/xiami.py	/^    def __init__(self):$/;"	m	class:XiamiSpider
+ageree	Music/tst.html	/^function ageree(id,state){$/;"	f
+allowed_domains	Music/spiders/billboard.py	/^    allowed_domains = ['billboard.com', 'sogou.com']$/;"	v	class:BillBoardSpider
+allowed_domains	Music/spiders/sogou.py	/^    allowed_domains = ['sogou.com']$/;"	v	class:SogouSpider
+allowed_domains	Music/spiders/xiami.py	/^    allowed_domains = ['xiami.com', 'sogou.com']$/;"	v	class:XiamiSpider
+artist	Music/items.py	/^    artist = Field()$/;"	v	class:BillboardItem
+artist	Music/items.py	/^    artist = Field()$/;"	v	class:SogouItem
+checkinfo	Music/tst.html	/^	function checkinfo()$/;"	f
+db_path	Music/pipelines.py	/^db_path = home_path + '\/workspace\/DB\/'$/;"	v
+detail_report	Music/tst.html	/^function detail_report(id,type){$/;"	f
+doleave	Music/tst.html	/^	function doleave(obj) {$/;"	f
+download_file	Music/downloader.py	/^    def download_file(self, title, download_link):$/;"	m	class:Downloaders
+download_link	Music/items.py	/^    download_link = Field()$/;"	v	class:BillboardItem
+download_link	Music/items.py	/^    download_link = Field()$/;"	v	class:SogouItem
+home_path	Music/pipelines.py	/^home_path = '\/'.join(os.getcwd().split('\/')[0:3])$/;"	v
+homepath	Music/pipelines.py	/^    homepath = '\/'.join(os.getcwd().split('\/')[0:3])$/;"	v	class:MusicPipeline
+music	Music/music.py	/^    music = MusicMain(NUM_DOWNLOADERS)$/;"	v
+name	Music/spiders/billboard.py	/^    name = 'billboard'$/;"	v	class:BillBoardSpider
+name	Music/spiders/sogou.py	/^    name = 'sogou'$/;"	v	class:SogouSpider
+name	Music/spiders/xiami.py	/^    name = 'xiami'$/;"	v	class:XiamiSpider
+parse	Music/spiders/billboard.py	/^    def parse(self, response):$/;"	m	class:BillBoardSpider
+parse	Music/spiders/sogou.py	/^    def parse(self, response):$/;"	m	class:SogouSpider
+parse	Music/spiders/xiami.py	/^    def parse(self, response):$/;"	m	class:XiamiSpider
+parse_download	Music/spiders/billboard.py	/^    def parse_download(self, response):$/;"	m	class:BillBoardSpider
+parse_download	Music/spiders/sogou.py	/^    def parse_download(self, response):$/;"	m	class:SogouSpider
+parse_download	Music/spiders/xiami.py	/^    def parse_download(self, response):$/;"	m	class:XiamiSpider
+parse_sogou	Music/spiders/billboard.py	/^    def parse_sogou(self, response):$/;"	m	class:BillBoardSpider
+parse_sogou	Music/spiders/xiami.py	/^    def parse_sogou(self, response):$/;"	m	class:XiamiSpider
+process_item	Music/pipelines.py	/^    def process_item(self, item, spider):$/;"	m	class:MusicPipeline
+qwer	Music/tst.html	/^			function qwer(id,type){$/;"	f
+regReportEvent	Music/tst.html	/^function regReportEvent() {$/;"	f
+run	Music/downloader.py	/^    def run(self):$/;"	m	class:Downloaders
+run_billboard	Music/music.py	/^    def run_billboard(self):$/;"	m	class:MusicMain
+run_downloaders	Music/music.py	/^    def run_downloaders(self):$/;"	m	class:MusicMain
+send_msg	Music/sock.py	/^    def send_msg(self, msg):$/;"	m	class:Sock
+set	Music/tst.html	/^	function set(){$/;"	f
+share	Music/tst.html	/^		<a class="rr" name="share" type="share" onclick="stat('renren');" href="javascript:;" title="分享到人人网"><i><\/i><\/a> $/;"	a
+shareLink2Renren	Music/tst.html	/^function shareLink2Renren() {$/;"	f
+shareWin	Music/tst.html	/^function shareWin(width, height) {$/;"	f
+sock_listen	Music/sock.py	/^    def sock_listen(self):$/;"	m	class:Sock
+sock_setup	Music/music.py	/^    def sock_setup(self):$/;"	m	class:MusicMain
+spider_closed	Music/extensions.py	/^    def spider_closed(self, spider):$/;"	m	class:StopDownloaders
+spider_opened	Music/extensions.py	/^    def spider_opened(self, spider):$/;"	m	class:StopDownloaders
+start_urls	Music/spiders/billboard.py	/^    start_urls = []$/;"	v	class:BillBoardSpider
+start_urls	Music/spiders/sogou.py	/^    start_urls = ['http:\/\/music.sogou.com\/song\/newtop_1.html',$/;"	v	class:SogouSpider
+start_urls	Music/spiders/xiami.py	/^    start_urls = []$/;"	v	class:XiamiSpider
+stat	Music/tst.html	/^function stat(url){$/;"	f
+str_replace	Music/spiders/billboard.py	/^    def str_replace(self, str):$/;"	m	class:BillBoardSpider
+str_replace	Music/spiders/xiami.py	/^    def str_replace(self, str):$/;"	m	class:XiamiSpider
+title	Music/items.py	/^    title = Field()$/;"	v	class:BillboardItem
+title	Music/items.py	/^    title = Field()$/;"	v	class:SogouItem
+type	Music/items.py	/^    type = 'billboard'$/;"	v	class:BillboardItem
+type	Music/items.py	/^    type = 'sogou'$/;"	v	class:SogouItem
+wait4stop	Music/music.py	/^    def wait4stop(self):$/;"	m	class:MusicMain
